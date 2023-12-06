@@ -1,0 +1,33 @@
+
+<section class="container">
+  <div class="row">
+    <div class="py-2">
+      <input type="file" (change)="uploadFile($event)" />
+  
+  </div>
+
+  </div>
+
+
+<div class="py-2">
+    <select >
+        <option selected disabled>Select Option</option>
+      <option value="[200110] Balance sheet" (click)="displaydata($event)">[200110] Balance sheet</option>
+      <option value="[300110] Statement of income" (click)="displaydata($event)">[300110] Statement of income</option>
+      <option value="[500110] Statement of cash flows" (click)="displaydata($event)">[500110] Statement of cash flows</option>
+    </select>
+  </div>
+
+  <table class="table table-bordered">
+    <tr>
+        <th>Key</th>
+        <th>Value</th>
+    </tr>
+    <tr *ngFor="let item of dataFile">
+        <td>{{item.key}}</td>
+        <td>{{item.value}}</td>
+
+    </tr>
+  </table>
+
+</section>
